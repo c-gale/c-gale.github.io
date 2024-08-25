@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Cursor</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+        }
+
+        .target {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+            text-align: center;
+            line-height: 100px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        #cursor {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url('cursor/arrow.cur') no-repeat center center;
+            background-size: contain;
+            pointer-events: none;
+            transition: top 1s ease, left 1s ease; /* Ensure transition is applied */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="div1" class="target">Div 1</div>
+    <div id="div2" class="target">Div 2</div>
+    <div id="div3" class="target">Div 3</div>
+
+    <div id="cursor"></div>
+
+    <script>
+        const cursor = document.getElementById('cursor');
+
+        function moveCursor(toTargetId) {
+            const target = document.getElementById(toTargetId);
+            const targetRect = target.getBoundingClientRect();
+            
+            // Calculate target position including scrolling
+            const targetX = targetRect.left + window.scrollX +(Math.random() * 20);
+            const targetY = targetRect.top + window.scrollY +(Math.random() * 20);
+
+            // Apply position changes
+            cursor.style.left = `${targetX}px`;
+            cursor.style.top = `${targetY}px`;
+        }
+
+        // Move the cursor to div2 after 1 second
+        setTimeout(() => {
+            // Set initial position (could be hidden initially)
+            cursor.style.left = cursor.style.left+"0px";
+            cursor.style.top = cursor.style.left+"0px";
+            
+            // Trigger reflow
+            // This ensures the transition is applied from the initial to final state
+            void cursor.offsetWidth; 
+
+            // Now move the cursor to the target
+            moveCursor('div2');
+
+            setTimeout(() => {
+                moveCursor('div1');
+            }, 2000);
+        }, 1000);
+    </script>
+</body>
+</html>
