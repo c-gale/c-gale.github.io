@@ -3,8 +3,6 @@ var currentDate = new Date(Date.now() - 360000)
 const minTypingSpeedInSeconds = 0.05;
 const maxTypingSpeedInSeconds = 0.1;
 
-
-
 const dateEndings = {
     0:"th",
     1:"st",
@@ -21,6 +19,16 @@ const keyboardSFXFileNames = [
     "key6",
     "key7",
 ]
+
+const optionValues = {
+    ["blankOption"]: "",
+    ["inspirationsOption"]: `Inspiration for this website comes from<pause=600> a couple diffrent sources,<br>
+    ofc I wanted it to look like old websites from the 80s/90s<br><pause=1000>
+    but I also took a lot of inspiration from a web<pause=250>site called <pause=350>straw.page <pause=500> (<pause=600>the )
+    `,
+    ["musicOption"]: "",
+    ["favOption"]: ""
+}
 
 function getDateEnding(endOfDate) {
     if (endOfDate > 3) {
@@ -68,46 +76,73 @@ function preprocessTextAlt(text) {
     return result
 }
 
-async function typewriter(element, rawText, i = 0) {
-    // Remove any existing cursor
+function typewriter(element, rawText, i = 0) {
     const text = preprocessText(rawText);
 
-    const cursor = document.querySelector('.blinking-cursor');
-    if (cursor) cursor.remove();
+    return new Promise((resolve) => {
+        function typeCharacter(i) {
+            // Remove any existing cursor
+            const cursor = document.querySelector('.blinking-cursor');
+            if (cursor) cursor.remove();
 
-    // Check if the current portion of text contains a pause tag
-    const pauseMatch = text.slice(i).match(/^<pause=(\d+)>/);
-    const writingPause = Math.random() * ((maxTypingSpeedInSeconds*1000) - (minTypingSpeedInSeconds*1000)) + minTypingSpeedInSeconds*1000
+            const randomTypingDelay =  (Math.random() * (maxTypingSpeedInSeconds - minTypingSpeedInSeconds) + minTypingSpeedInSeconds)*1000;
 
-    if (pauseMatch) {
-        const pauseDuration = parseInt(pauseMatch[1], 10);
-        const nextIndex = i + pauseMatch[0].length;
-        
-        setTimeout(() => typewriter(element, text, nextIndex), pauseDuration);
-    } 
+            // Check if the current portion of text contains a pause tag
+            const pauseMatch = text.slice(i).match(/^<pause=(\d+)>/);
+            
+            if (pauseMatch) {
+                // Extract the duration from the tag
+                const pauseDuration = parseInt(pauseMatch[1], 10);
+                // Calculate the next index after the pause tag
+                const nextIndex = i + pauseMatch[0].length;
+                
+                // Pause for the specified duration and continue typing
+                setTimeout(() => typeCharacter(nextIndex), pauseDuration);
+            } 
+            // Check if the current portion of text contains a line break tag
+            else if (text.slice(i).startsWith('<br>')) {
+                // Add a line break to the element
+                element.innerHTML += '<br>';
+                // Move to the next character after the <br> tag
+                setTimeout(() => typeCharacter(i + 4), randomTypingDelay);
+            } 
+            else {
+                // For normal text, append the character using innerHTML
+                element.innerHTML += text[i];
+                
+                playKeyboardSound();
 
-    else if (text.slice(i).startsWith('<br>')) {
-        element.innerHTML += '<br>';
-        setTimeout(() => typewriter(element, text, i + 4), writingPause);
-    } 
-    else {
-        element.innerHTML += text[i];
-
-        playKeyboardSound();
-
-        if (i == text.length - 1) {
-            // Stop when the text is fully typed
-            return;
+                if (i === text.length - 1) {
+                    // Add the blinking cursor after the text is fully typed
+                    element.innerHTML += '<span class="blinking-cursor">|</span>';
+                    resolve();  // Resolve the promise when done
+                } else {
+                    // Continue typing with a random delay
+                    setTimeout(() => typeCharacter(i + 1), randomTypingDelay);
+                }
+            }
+            
+            // Add the blinking cursor at the end of the element
+            if (i < text.length - 1) {
+                element.innerHTML += '<span class="blinking-cursor">|</span>';
+            }
         }
         
-        setTimeout(() => typewriter(element, text, i + 1), writingPause);
-    }
-    
-    element.innerHTML += '<span class="blinking-cursor">|</span>';
+        typeCharacter(i);
+    });
 }
 
-function getRandomTypingDelay() {
-    return Math.random() * 100 + 50;
+function moveCursor(toTargetId, cursor) {
+    const target = document.getElementById(toTargetId);
+    const targetRect = target.getBoundingClientRect();
+    
+    // Calculate target position including scrolling
+    const targetX = targetRect.left + window.scrollX + 140 +(Math.random() * 20);
+    const targetY = targetRect.top + window.scrollY + 26 +(Math.random() * 20);
+
+    // Apply position changes
+    cursor.style.left = `${targetX}px`;
+    cursor.style.top = `${targetY}px`;
 }
 
 document.onreadystatechange = () => {
@@ -125,18 +160,7 @@ document.onreadystatechange = () => {
         P.<pause=500>S.<pause=500> this website is very incomplete atm!`
 
         const cursor = document.getElementById('cursor');
-        function moveCursor(toTargetId) {
-            const target = document.getElementById(toTargetId);
-            const targetRect = target.getBoundingClientRect();
-            
-            // Calculate target position including scrolling
-            const targetX = targetRect.left + window.scrollX + 140 +(Math.random() * 20);
-            const targetY = targetRect.top + window.scrollY + 26 +(Math.random() * 20);
         
-            // Apply position changes
-            cursor.style.left = `${targetX}px`;
-            cursor.style.top = `${targetY}px`;
-        }
         // Move the cursor to div2 after 1 second
         setTimeout(() => {
             // Set initial position (could be hidden initially)
@@ -148,7 +172,7 @@ document.onreadystatechange = () => {
             void cursor.offsetWidth; 
 
             // Now move the cursor to the target
-            moveCursor('aboutMeDesc');
+            moveCursor('aboutMeDesc', cursor);
         }, 1000);
 
         setTimeout(() => { 
@@ -162,12 +186,16 @@ document.onreadystatechange = () => {
          }, 2000)
 
         setTimeout(() => {
-            typewriter(document.querySelector("#aboutMeDesc"), text); 
+            typewriter(document.querySelector("#aboutMeDesc"), text).then(() => {
+                console.log('Typing complete!');
+                
+                setTimeout(() => {
+                    cursor.style.left = "130%";
+                    cursor.style.top = "200px";
+                }, 2500);
+            }); 
         }, 2500);
         // PLEAASEE OPTIMIZZZEEE THINGGNIG BECAUSE THERES GOT TO BE A BETTER WAY OF DOING THIS
-
-        // ALSO FIGURE OUT HOW TO CHECK IF A FUNCTION IS COMPLETED AND MAKE THAT WORK WITH THE TYPEWRITER FUNCTION PLEASE!
-        
     }
 };
 

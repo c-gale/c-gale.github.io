@@ -27,7 +27,7 @@
     <div class="window" style="margin-bottom: 32px; margin-left: 10px; width: 350px">
         <div class="title-bar">
           <div class="title-bar-text">
-            ABOUT_ME.txt* - Notepad
+            <img src="/imgs/notepadIcon.png" alt="[n]" width="15px" height="11px"> ABOUT_ME.txt* - Notepad
           </div>
           
           <div class="title-bar-controls">
@@ -39,6 +39,18 @@
         <div class="window-body">
           <ul class="tree-view" id="aboutMeDesc">
           </ul>
+          <br>
+          <div class="field-row-stacked" style="width: 100%;">
+            <label for="text17">What Do you want to know about me?</label>
+            <select style="width: 100%;">
+              <option value="blankOption">Blank</option>
+              <option value="inspirationsOption">What is this website's main inspiration(s)?</option>
+              <option value="musicOption">What kind of music do you listen to/make?</option>
+              <option value="favOption">What are your favorite things?</option>
+              <option value="seachOption">im going to seach you!</option>
+            </select>
+            <button id="submitOption">SUBMIT</button>
+          </div>
         </div>
       </div>
 
