@@ -42,14 +42,14 @@
           <br>
           <div class="field-row-stacked" style="width: 100%;">
             <label for="text17">What Do you want to know about me?</label>
-            <select style="width: 100%;">
+            <select style="width: 100%;" id="whatDoYouSelect">
               <option value="blankOption">Blank</option>
               <option value="inspirationsOption">What is this website's main inspiration(s)?</option>
               <option value="musicOption">What kind of music do you listen to/make?</option>
               <option value="favOption">What are your favorite things?</option>
               <option value="seachOption">im going to seach you!</option>
             </select>
-            <button id="submitOption">SUBMIT</button>
+            <button id="submitOption" onclick="onSubmitOptionClicked()">SUBMIT</button>
           </div>
         </div>
       </div>

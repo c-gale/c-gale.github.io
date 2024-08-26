@@ -2,6 +2,7 @@ var currentDate = new Date(Date.now() - 360000)
 
 const minTypingSpeedInSeconds = 0.05;
 const maxTypingSpeedInSeconds = 0.1;
+var isCurrentlyTyping = false;
 
 const dateEndings = {
     0:"th",
@@ -22,7 +23,7 @@ const keyboardSFXFileNames = [
 
 const optionValues = {
     ["blankOption"]: "",
-    ["inspirationsOption"]: `Inspiration for this website comes from<pause=600> a couple diffrent sources,<br>
+    ["inspirationsOption"]: `inspiration for this website comes from<pause=600> a couple diffrent sources,<br>
     ofc I wanted it to look like old websites from the 80s/90s<br><pause=1000>
     but I also took a lot of inspiration from a web<pause=250>site called <pause=350>straw.page <pause=500> (<pause=600>the )
     `,
@@ -78,6 +79,7 @@ function preprocessTextAlt(text) {
 
 function typewriter(element, rawText, i = 0) {
     const text = preprocessText(rawText);
+    isCurrentlyTyping = true;
 
     return new Promise((resolve) => {
         function typeCharacter(i) {
@@ -145,6 +147,64 @@ function moveCursor(toTargetId, cursor) {
     cursor.style.top = `${targetY}px`;
 }
 
+function doDeleteAllEffect() {
+    var element = document.getElementById("aboutMeDesc");
+    element.innerHTML = "";
+}
+
+function isInOptionTable(option) {
+    for (const [key, value] of Object.entries(optionValues)) {
+        console.log(key+" : "+value);
+        if (option == key) {
+            return [true, value];
+        }
+    }
+
+    return false;
+}
+
+function onSubmitOptionClicked() {
+    if (isCurrentlyTyping) {
+        console.log("CAN'T RN!");
+        return
+    }
+
+    const selectElement = document.querySelector('#whatDoYouSelect');
+    var selectedOption = selectElement.value;
+
+    const [ isOption, optionText ] = isInOptionTable(selectedOption)
+
+    if (isOption) {
+        const element = document.getElementById("#aboutMeDesc")
+        moveCursor('aboutMeDesc', document.getElementById('cursor'));
+
+        setTimeout(() => { 
+            var sound = new Howl({
+                src: ["sfx/mouseclick.wav"],
+                volume: 0.4,
+                autoplay: false
+            });
+        
+            sound.play();
+        }, 2000)
+
+        setTimeout(() => {
+            doDeleteAllEffect();
+        }, 2500);
+
+        setTimeout(() => {
+            typewriter(document.getElementById("aboutMeDesc"), optionText).then(() => {
+                setTimeout(() => {
+                    cursor.style.left = "130%";
+                    cursor.style.top = "200px";
+
+                    isCurrentlyTyping = false;
+                }, 2500);
+            })
+        }, 2700);
+    };
+};
+
 document.onreadystatechange = () => {
     if (document.readyState === 'complete') {
         const text = `
@@ -186,7 +246,8 @@ document.onreadystatechange = () => {
          }, 2000)
 
         setTimeout(() => {
-            typewriter(document.querySelector("#aboutMeDesc"), text).then(() => {
+            typewriter(document.getElementById("aboutMeDesc"), text).then(() => {
+                isCurrentlyTyping = false;
                 console.log('Typing complete!');
                 
                 setTimeout(() => {
@@ -195,7 +256,6 @@ document.onreadystatechange = () => {
                 }, 2500);
             }); 
         }, 2500);
-        // PLEAASEE OPTIMIZZZEEE THINGGNIG BECAUSE THERES GOT TO BE A BETTER WAY OF DOING THIS
     }
 };
 
