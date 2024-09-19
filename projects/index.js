@@ -83,7 +83,7 @@ document.onreadystatechange = () => {
     }
 };
 
-// CSS for the blinking cursor
+// CSS for the blinking cursor cool
 const style = document.createElement('style');
 style.innerHTML = `
     .blinking-cursor {
