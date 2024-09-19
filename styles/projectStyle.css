@@ -1,0 +1,45 @@
+* {
+    cursor: url("/cursor/roblox.cur"), auto;
+}
+
+.simplebar-scrollbar::before {
+    background-color: red;
+}
+
+body { background-image:url('/imgs/matrixGif.gif'); background-repeat:repeat; }
+
+#pfpImage {
+    border: 5px solid #000000;
+    margin-right: 3ch;
+    border-radius: 1px;
+    padding: 5px;
+    width: 136px;
+}
+
+#cursor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('../cursor/arrow.cur') no-repeat center center;
+    background-size: contain;
+    pointer-events: none;
+    transition: top 1s ease, left 1s ease; /* Ensure transition is applied */
+    left: -9999px;
+    top: -9999px;
+}
+
+#aboutMeDesc {
+    min-height: 127px;
+    height: fit-content;
+    width: 400px;
+}
+
+#socials {
+    margin-left: 7px;
+}
+
+.socialBTN {
+    margin-top: 2px;
+    min-width: 120px;
+    margin-bottom: 1px;
+}

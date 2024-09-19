@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" /> 
   <!-- ^for the windows 98 look -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.js" integrity="sha512-7Zgn4mmO9yGGB1j9yP0mZvUPWBVg0fCcUMsYUV6FX7XIKQfb/dhGxsKh794YAzXH2F/+Z3eJL4mrTilrT2ZeFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="scripts/index.js" crossorigin="anonymous"></script>
+  <script src="/scripts/typeEffect.js" crossorigin="anonymous"></script>
+  <script src="/index.js" crossorigin="anonymous"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jersey+10&family=Jersey+10+Charted&display=swap');
   </style>
@@ -49,7 +50,7 @@
               <option value="favOption">What are your favorite things?</option>
               <option value="seachOption">im going to seach you!</option>
             </select>
-            <button id="submitOption" onclick="onSubmitOptionClicked()">SUBMIT</button>
+            <button id="submitOption" onclick="onSubmitOptionClicked()" disabled>SUBMIT</button>
           </div>
         </div>
       </div>

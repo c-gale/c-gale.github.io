@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>me!</title>
+  <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
+  <link href="../styles/projectStyle.css" rel="stylesheet" type="text/css" />
+  <!-- ^for the windows 98 look -->
+
+  <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" /> 
+  <script src="/scripts/jQuery.js"></script>
+  <script src="/scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.js" integrity="sha512-7Zgn4mmO9yGGB1j9yP0mZvUPWBVg0fCcUMsYUV6FX7XIKQfb/dhGxsKh794YAzXH2F/+Z3eJL4mrTilrT2ZeFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/scripts/typeEffect.js" crossorigin="anonymous"></script>
+  <script src="/projects/index.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/styles/jquery.mCustomScrollbar.css"/>
+
+  <script>
+    (function($){
+        $(window).on("load",function(){
+            $(".content").mCustomScrollbar({
+              theme:"dark-thick",
+              snapAmount: 50,
+              scrollButtons: { enable: true },
+            });
+        });
+    })(jQuery);
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jersey+10&family=Jersey+10+Charted&display=swap');
+  </style>
+</head>
+    <body>
+        <div class="projects" style="display: flex;">
+            <!-- <img src="/imgs/matrixGif.gif" alt="matrixGif" stlye="position: absolute; z-index: -2;"> -->
+            <div class="window" style="margin-bottom: 32px; margin-left: 10px; margin-top:20px; width: 800px; height: max-content;">
+                <div class="title-bar">
+                  <div class="title-bar-text">
+                    ABOUT ME:
+                  </div>
+                  
+                  <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                  </div>
+                </div>
+                <div class="window-body" style="display: flex;">
+                    <img alt="pfp" src="/imgs/pfp.png" id="pfpImage">
+                    <div class="aboutMeDescBox" style="min-width: max-content;">
+                        <b>ABOUT ME:</b>
+                        <ul class="tree-view" id="aboutMeDesc">
+                            
+                        </ul>
+                    </div>
+                    <div id="socials">
+                        <b>SOCIALS:</b><br>
+                        <button class="socialBTN" onclick="window.open('https://www.roblox.com/users/38068071/profile','_blank')">ROBLOX</button><br>
+                        <button class="socialBTN" onclick="window.open('https://github.com/c-gale','_blank')">GITHUB</button>
+                    </div>
+                </div>
+              </div>
+
+            <div class="window" style="margin-bottom: 32px; margin-left: 10px; margin-top:20px; width: 800px; height: 500px;">
+                <div class="title-bar">
+                  <div class="title-bar-text">
+                    PROJECTS:
+                  </div>
+                  
+                  <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                  </div>
+                </div>
+                <div class="window-body" style="display: flex;">
+                  <ul class="tree-view" style="width: 100%; height: 400px;">
+                    <div class="content" data-mcs-mouseWheel="false" style="height: 200px;">
+                      <br>e<br>e<br>e<br>e<br>e<br>e<br>e<br>e<br>e<br>e<br>e<br>e<br>e<br>e<br>e<br>e<br>e<br>e
+                      <p>
+                          A data structure is defined as a particular
+                          way of storing and organizing data in our
+                          devices to use the data efficiently and
+                          effectively. The main idea behind using
+                          data structures is to minimize the time
+                          and space complexities. An efficient data
+                          structure takes minimum memory space and
+                          requires minimum time to execute the data.
+                      </p>
+              
+                      <strong>What is Algorithm?</strong>
+                      <p>
+                          Algorithm is defined as a process or set
+                          of well-defined instructions that are
+                          typically used to solve a particular group
+                          of problems or perform a specific type of
+                          calculation. To explain in simpler terms,
+                          it is a set of operations performed in a
+                          step-by-step manner to execute a task.
+                      </p>
+              
+                      <strong>How to start learning DSA?</strong>
+                      <p>
+                          The first and foremost thing is dividing
+                          the total procedure into little pieces
+                          which need to be done sequentially. The
+                          complete process to learn DSA from
+                          scratch can be broken into 4 parts:
+                      </p>
+              
+                      <li>Learn about Time and Space complexities</li>
+                      <li>
+                          Learn the basics of individual
+                          Data Structures
+                      </li>
+                      <li>Learn the basics of Algorithms</li>
+                      <li>Practice Problems on DSA</li>
+              
+                      <strong> 1. Learn about Complexities</strong>
+                      <p>
+                          Here comes one of the interesting and
+                          important topics. The primary motive to
+                          use DSA is to solve a problem effectively
+                          and efficiently. How can you decide if a
+                          program written by you is efficient or
+                          not? This is measured by complexities.
+                          Complexity is of two types:
+                      </p>
+              
+                      <li>
+                          <strong>Time Complexity:</strong> Time
+                          complexity is used to measure the amount
+                          of time required to execute the code.
+                      </li>
+                      <li>
+                          <strong>Space Complexityy:</strong>
+                          Space complexity means the amount of
+                          space required to execute successfully
+                          the functionalities of the code. You
+                          will also come across the term Auxiliary
+                          Space very commonly in DSA, which refers
+                          to the extra space used in the program
+                          other than the input data structure.
+                      </li>
+                      <p>
+                          Both of the above complexities are
+                          measured with respect to the input
+                          parameters. But here arises a problem.
+                          The time required for executing a code
+                          depends on several factors, such as:
+                      </p>
+                      <li>
+                          The number of operations performed
+                          in the program
+                      </li>
+                      <li>The speed of the device, and also</li>
+                      <li>
+                          The speed of data transfer if being
+                          executed on an online platform.
+                      </li>
+                    </div>
+                 </ul>
+                </div>
+              </div>
+          </div>
+        <div id="cursor"></div>
+    </body>
+</html>
