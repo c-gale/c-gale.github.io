@@ -32,14 +32,17 @@ document.onreadystatechange = () => {
 
         const text = `
         Hello, world!<br><pause=300>
-        My name is<pause=150> Optical,<br>
-        I'm<pause=150> <pause=250>15.5 yea<pause=150>rs old,<br>
-        I program with luau,<pause=350> python,<pause=250> and some others.<br>
-        I'm currently <pause=200>learning Godot,<br> 
-        however I mostly use <pause=250> Roblox Studio, which<br><pause=250>
-        I have around <pause=350>3 years of experience in.<br><br>
-        feel free to check out my projects and look at my socials!<br>P.S. thanks for your time!`
-
+        I'm Optical, And I like making games!<br>
+        I have 3 years of scripting experience,<br>
+        I'm a beginner r6 animator,<br>
+        as well as a<pause=300> UI des<pause=150>igner...<br>
+        <pause=800>I have worked on some projects so feel free to check them out!<br>
+        I'm avalible on weekdays from 5pm to 8pm and on weekends i'm available from 1pm to around 10pm (keep in mind this schedule is flexible)<br>
+        <pause=800>(MST is m<pause=250>y timezone by the way)<br>
+        <br>
+        Thanks and have a good day!<br>
+        Also, you can reach me through discord at @optical_.
+        `;
         const cursor = document.getElementById('cursor');
         
         // Move the cursor to div2 after 1 second
@@ -72,8 +75,8 @@ document.onreadystatechange = () => {
                 console.log('Typing complete!');
                 
                 setTimeout(() => {
-                    cursor.style.left = "130%";
-                    cursor.style.top = "200px";
+                    cursor.style.left = "-999px";
+                    cursor.style.top = "500px";
                 }, 2500);
             }); 
         }, 2500);

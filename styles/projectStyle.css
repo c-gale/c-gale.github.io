@@ -43,3 +43,25 @@ body { background-image:url('/imgs/matrixGif.gif'); background-repeat:repeat; }
     min-width: 120px;
     margin-bottom: 1px;
 }
+
+.project-container {
+    border: #5d5d5d solid;
+    padding: 1ch;
+    display: flex;
+    margin-bottom: 10px;
+    margin-right: 1.5ch;
+}
+
+.details {
+    font-weight: bold;
+    margin-left: 2ch;
+    font-size: 12px;
+}
+
+.details-title {
+    font-size: 30px;
+}
+
+.details-subtitle {
+    font-size: 15px;
+}
