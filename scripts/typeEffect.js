@@ -1,5 +1,5 @@
-const minTypingSpeedInSeconds = 0.05;
-const maxTypingSpeedInSeconds = 0.1;
+const minTypingSpeedInSeconds = 0.025;
+const maxTypingSpeedInSeconds = 0.05;
 var isCurrentlyTyping = false;
 
 const keyboardSFXFileNames = [
