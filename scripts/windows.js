@@ -46,7 +46,7 @@ function openWindow(element, startX, targetY, targetWidth) {
     element.style.top = `${window.innerHeight-5}px`
     element.style.width = `${500}px`
 
-    var iterations = 8
+    var iterations = 8;
 
     var targetYInterval = (parseInt(element.style.top,10) - targetY)/iterations
     var targetWidthInterval = (targetWidth - parseInt(element.style.width,10))/iterations
@@ -57,7 +57,7 @@ function openWindow(element, startX, targetY, targetWidth) {
         if (iteration < iterations) {
             const randomNum = (Math.random() * (100 - 1) + 1) // whether or not to hide the div for this interation
 
-            if (randomNum >= 60) {
+            if (randomNum >= 63) {
                 element.style.display = "none";
             } else {
                 element.style.display = "block";
