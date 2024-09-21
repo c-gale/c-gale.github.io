@@ -2,19 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=2">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Portfolio</title>
   <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
-  <link href="../styles/projectStyle.css" rel="stylesheet" type="text/css" />
+  <link href="/styles/projectStyle.css" rel="stylesheet" type="text/css" />
   <!-- ^for the windows 98 look -->
 
+    <noscript>
+      <div class="window" style="margin-bottom: 9000px; margin-left: auto; margin-right: auto; margin-top:20px;">
+        <div class="title-bar">
+          <div class="title-bar-text">
+            <img> FATAL ERROR:
+          </div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="window-body">
+            I'm sorry but this site <b>requires</b> JavaScript. 
+        </div>
+    </div>
+  </noscript>
+
   <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" /> 
-  <script src="/scripts/jQuery.js"></script>
-  <script src="/scripts/jquery.mCustomScrollbar.concat.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.js" integrity="sha512-7Zgn4mmO9yGGB1j9yP0mZvUPWBVg0fCcUMsYUV6FX7XIKQfb/dhGxsKh794YAzXH2F/+Z3eJL4mrTilrT2ZeFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="/scripts/typeEffect.js" crossorigin="anonymous"></script>
+  <script src="/scripts/divDragger.js" crossorigin="anonymous"></script>
+  <script src="/scripts/windows.js" crossorigin="anonymous"></script>
   <script src="/projects/index.js" crossorigin="anonymous"></script>
 
   <style>
@@ -22,105 +39,184 @@
   </style>
 </head>
     <body>
-        <div class="projects" style="display: flex;">
+        <div class="projects" style="display: flex; margin-left: auto; margin-right: auto;">
             <!-- <img src="/imgs/matrixGif.gif" alt="matrixGif" stlye="position: absolute; z-index: -2;"> -->
-            <div class="window" style="margin-bottom: 32px; margin-left: 10px; margin-top:20px; width: 800px; height: max-content;">
+            <div class="window" style="margin-bottom: 32px; margin-top:20px; min-width: 730px; max-width: max-content; height: 600px;">
                 <div class="title-bar">
                   <div class="title-bar-text">
                     ABOUT ME:
                   </div>
-                  
-                  <div class="title-bar-controls">
-                    <button aria-label="Minimize"></button>
-                    <button aria-label="Maximize"></button>
-                    <button aria-label="Close"></button>
-                  </div>
                 </div>
-                <div class="window-body" style="display: flex;">
-                    <img alt="pfp" src="/imgs/pfp.png" id="pfpImage" style="height: 135px; width: auto;">
-                    <div class="aboutMeDescBox" style="min-width: max-content;">
-                        <b>ABOUT ME:</b>
-                        <ul class="tree-view" id="aboutMeDesc">
-                            
-                        </ul>
-                    </div>
-                    <div id="socials">
-                        <b>SOCIALS:</b><br>
-                        <button class="socialBTN" onclick="window.open('https://www.roblox.com/users/38068071/profile','_blank')">ROBLOX</button><br>
-                        <button class="socialBTN" onclick="window.open('https://github.com/c-gale','_blank')">GITHUB</button>
-                    </div>
-                </div>
-              </div>
+                <div class="window-body">
+                    <div class="horizontal-container">
+                      <div class="pfpWrapper"><div class="title"> <div class="OPTICAL"><img id="titleImage" alt="OPTICAL", src="/imgs/titles/BIGTITLECROPPED.png" width=400px height=45px style="overflow: hidden;"></div></div><img alt="pfp" src="/imgs/pfp.png" id="pfpImage"></div>
+                      <div class="aboutMeDescBox" style="min-width: max-content;">
+                        
+                          <b>ABOUT ME:</b>
+                          <ul class="tree-view" id="aboutMeDesc"></ul>
 
-            <div class="window" style="margin-bottom: 32px; margin-left: 10px; margin-top:20px; min-width: 600px; max-width: 55%; min-height: 500px; max-height: max-content;">
+                      </div>
+                      <div id="socials">
+                          <b>SOCIALS:</b><br>
+                          <button class="socialBTN" onclick="window.open('https://www.roblox.com/users/38068071/profile','_blank')">ROBLOX</button><br>
+                          <button class="socialBTN" onclick="window.open('https://github.com/c-gale','_blank')">GITHUB</button>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="horizontal-container">
+                    <div class="aboutMeDetails">
+                      <div class="details-subtitle">Some more things:</div>
+                        Although I have most of my expirence in programming, I can also do:
+                        <ul>
+                          <li>Building</li>
+                          <li>UI Design</li>
+                          <li>R6 animation</li>
+                        </ul>
+                        <p>
+                          I'm versed in a lot of game design concepts and how and when to apply them,<br>
+                          as well as some computer science principles which I find very intresting.<br><br>
+                          I know luau the best but I can also program in:
+                          <ul>
+                            <li>Python</li>
+                            <li>Javascript</li>
+                            <li>C++</li>
+                            <li>SQL</li>
+                          </ul>
+                          Anyways, thank you for getting thus far!<br>
+                          Enjoy the rest of your morning/afternoon or evening! 
+                        </p>
+                      </div>
+                      <!-- <hr> -->
+                      <!-- <img class="sideGif" alt="maxwell" src="/imgs/maxwell.gif">  a bit too much movement for contrast-->
+                    </div>
+                    <hr>
+                    &copy ABOUT ME 2024. COPYRIGHT LOLOLOL.
+                </div>
+            </div>
+
+            <div class="window" style="margin-bottom: 32px; margin-left: 10px; margin-top:20px; min-width: fit-content; max-height: 600px;">
                 <div class="title-bar">
                   <div class="title-bar-text">
                     PROJECTS/EXPERIENCES:
                   </div>
-                  
-                  <div class="title-bar-controls">
-                    <button aria-label="Minimize"></button>
-                    <button aria-label="Maximize"></button>
-                    <button aria-label="Close"></button>
-                  </div>
                 </div>
                 <div class="window-body">
-                  <b><a href="https://create.roblox.com/talent/creators/38068071" target="_blank" style="color: rgb(0, 0, 158); text-decoration: underline;">Talent Hub Version (proof)</a></b><br><br>
-                  <ul class="tree-view" style="width: auto; min-height: 300px;">
-                    <div class="scroll-container" data-mcs-mouseWheel="false" style="height: 98%; overflow: scroll;">
-                      <div class="project-container" style="min-width: fit-content; max-width: max-content; min-height: fit-content; max-height: 55%;">
-                        <div class="imageDiv"><img alt="image" src="/imgs/thatoneomorigame.png" style="border: #000000 solid; min-width: 165px; max-height: 165px;">
+                  <b><a href="https://create.roblox.com/talent/creators/38068071" target="_blank" style="color: rgb(0, 0, 158); text-decoration: underline;">Talent Hub Version (validation)</a></b><br><br>
+                  <ul class="tree-view" style="width: auto;">
+                    <div class="scroll-container" data-mcs-mouseWheel="false" style="height: 520px; overflow: scroll;">
+                      <div class="project-container">
+                        <div class="imageDiv"><img alt="image" src="/imgs/gameIcons/thatoneomorigame.png" class="projectImage">
+                          <br>
+                          <div class="details-subtitle-x2">That One Omori Game!</div>
+                          LINKS:
                           <br>
                           <a href="https://www.roblox.com/games/10400440200/That-One-OMORI-Game" target="_blank" style="color: rgb(0, 0, 158); text-decoration: underline;"><b>ROBLOX GAME</b></a>
-                          <!-- <br><br><button style="min-width: 165px;">MORE ABOUT THIS PROJECT</button> -->
-                        </div>
-                        <div class="details">
-                          <div class="details-title">That One Omori Game!</div>
-                          <div class="details-subtitle">Programmer, GUI Designer (Apr 2023 - Mar 2024)</div><hr>
-                          Some Things I Did While working on this project:
-                          <ul>
-                            <li>Created events that would happen in-game. (Server Breaker Event)</li>
-                            <li>Created small areas in game with script functionality. (such as: badges, prompts, GUIs)</li>
-                            <li>Helped Create the Main Menu and other GUIs</li>
-                            <li>Found and fixed errors and issues with code</li>
-                            <li>Created some small areas in the game (Kel's Maze for example)</li>
-                            <li>Optimization in code and gameplay</li>
-                          </ul>
-                          Personal Note: The reason I stopped developing this game was due to an allegation of the owner as well as some mental issues coming up (due to some stuff in the real world, not because of the owner or the game).
-                          in which I believed the best idea was to part ways (PS: Please don't try to harass the owner, especially since their name was mostly or completely cleared from my knowledge.)
+                          <br><br>
+                          <button class="projectExpand" onclick='openWindow(document.getElementById("TOOG-projectInfo"), 100, 55, 900)'>MORE ABOUT THIS PROJECT</button>
                         </div>
                       </div>
                       <div class="project-container">
-                        <div class="imageDiv"><img alt="image" src="/imgs/atlasadminpanellogo.png" style="border: #000000 solid; min-width: 165px; max-height: 165px;">
+                        <div class="imageDiv"><img alt="image" src="/imgs/gameIcons/atlasadminpanellogo.png" class="projectImage">
                           <br>
+                          <div class="details-subtitle-x2">Atlas Admin Panel</div>
+                          LINKS:<br>
                           <a href="https://youtu.be/PigaoKTKhyA?si=tYiRwLoieNQVW1iB" target="_blank" style="color: rgb(0, 0, 158); text-decoration: underline;"><b>YOUTUBE SHOWCASE</b></a>
-                        </div>
-                        <div class="details">
-                          <div class="details-title">Atlas Admin Panel</div>
-                          <div class="details-subtitle">Programmer, GUI Designer (Sep 2020 - Present)</div><hr>
-                          A functioning GUI based admin panel I made for my games.
-                          Here's a few skills that this project required:
-                          <ul>
-                            <li>File Managment</li>
-                            <li>Script Optimization</li>
-                            <li>Use of module scripts for repetitive functions as well as orginazation such as commands.</li>
-                            <li>Use of proper security within remote events and server side scripts</li>
-                            <li>Use of datastoring to save and retain data between game instances</li>
-                          </ul>
-
-                          (Note: I'm working on a much more improved admin panel)
+                          <br><br>
+                          <button class="projectExpand" onclick='openWindow(document.getElementById("AAP-projectInfo"), 300, 100, 900)'>MORE ABOUT THIS PROJECT</button>
                         </div>
                       </div>
                     </div>
                  </ul>
                 </div>
               </div>
-          </div>
+
+              <div class="window" id="TOOG-projectInfo">
+                <div class="title-bar" id="TOOG-projectInfo-Header">
+                  <div class="title-bar-text">
+                    <img alt="TOOG" src="/imgs/gameIcons/thatoneomorigame.png" width="10px" style="margin-right: 1px; margin-left: 2px;"> THAT ONE OMORI GAME:
+                  </div>
+                  
+                  <div class="title-bar-controls">
+                    <button aria-label="Close" onclick='closeWindow("TOOG-projectInfo")'></button>
+                  </div>
+                </div>
+                <div class="window-body" id="TOOG-projectInfo-Body">
+                  <div class="horizontal-container">
+                    <div class="details">
+                      <div class="details-title">That One Omori Game!</div>
+                      <div class="details-subtitle">Programmer, GUI Designer (Apr 2023 - Mar 2024)</div><hr>
+                      Some Things I Did While working on this project:
+                      <ul>
+                        <li>Created events that would happen in-game. (Server Breaker Event)</li>
+                        <li>Created small areas in game with script functionality. (such as: badges, prompts, GUIs)</li>
+                        <li>Helped Create the Main Menu and other GUIs</li>
+                        <li>Found and fixed errors and issues with code</li>
+                        <li>Created some small areas in the game (Kel's Maze for example)</li>
+                        <li>Optimization in code and gameplay</li>
+                      </ul>
+                      Personal Note: The reason I stopped developing this game was due to an allegation of the owner as well as some mental issues coming up (due to some stuff in the real world, not because of the owner or the game).
+                      in which I believed the best idea was to part ways (PS: Please don't try to harass the owner, especially since their name was mostly or completely cleared from my knowledge.)
+                    </div>
+                    <hr>
+                    <div class="imageDiv" style="margin-left: 10px;"><img alt="image" src="/imgs/gameIcons/thatoneomorigame.png">
+                      <br>
+                      LINKS:<br>
+                      <a href="https://www.roblox.com/games/10400440200/That-One-OMORI-Game" target="_blank" style="color: rgb(0, 0, 158); text-decoration: underline;"><b>ROBLOX GAME</b></a>
+                    </div>
+                  </div>
+                  <hr>
+                  2024 C. GALE. WEBSITE
+                </div>
+              </div>
+
+              <div class="window" id="AAP-projectInfo">
+                <div class="title-bar" id="AAP-projectInfo-Header">
+                  <div class="title-bar-text">
+                     <img alt="AP_" src="/imgs/gameIcons/atlasadminpanellogo.png" width="10px" style="margin-right: 1px; margin-left: 2px;">ATLAS ADMIN PANEL:
+                  </div>
+                  
+                  <div class="title-bar-controls">
+                    <button aria-label="Close" onclick='closeWindow("AAP-projectInfo")'></button>
+                  </div>
+                </div>
+                <div class="window-body" id="AAP-projectInfo-Body">
+                  <p style="width: auto; background-color: rgba(227, 227, 137, 0.967); color: black; text-align: center;">///UNFINSHED PROJECT (UP TO 3.0)///</p>
+                  <div class="horizontal-container">
+                    <div class="details">
+                      <div class="details-title">Atlas Admin Panel</div>
+                      <div class="details-subtitle">Programmer, GUI Designer (Sep 2021 - Current)</div><hr>
+                      An Admin Panel I've been working on for the past 3 years, In which I've been adding more and more changes as well as revamping the UI.<br>
+                      The current version (3.0) can currently do the following (plus a lot more that isn't mentioned here):
+                      <ul>
+                        <li>Keep Logs of recently ran commands (an output)</li>
+                        <li>3rd-Party Plugins which can add more functionality to the admin panel</li>
+                        <li>Custom commands</li>
+                        <li>GUI equivelent to any command as well as a command bar</li>
+                        <li>Client-Side settings that allow the player to an easier UI experience</li>
+                        <li>A weight system along with customizable roles</li>
+                      </ul>
+                      Things that <b>will</b> be added in the future (or being worked on in the moment):
+                      <ul>
+                        <li><b style="width: fit-content; background-color: rgba(137, 204, 227, 0.967); color: black; text-align: center;">(CURRENTLY DOING)</b> A website capable of firing commands to a game server as well as managing other parts of the game without needing to in-game.</li>
+                        <li><b style="width: fit-content; background-color: rgba(197, 227, 137, 0.967); color: black; text-align: center;">(TO DO)</b> Discord Webhooks (through a proxy/website)</li>
+                      </ul>
+                    </div>
+                    <hr>
+                    <div class="imageDiv" style="margin-left: 0px;"><img alt="image" src="/imgs/gameIcons/atlasadminpanellogo.png" style="width: 200px; height: 200px;">
+                      <br>
+                    </div>
+                  </div>
+                  <hr>
+                  2024 C. GALE. WEBSITE
+                </div>
+
+              </div>
         <div id="cursor"></div>
         <!-- <div class="taskbar">
           <button id="startBtn"> <img alt="startIco" src="/imgs/favicon.ico" style="width: 15px; height: 15px; margin-top: 5px; margin-left: 7px;"> <b style="margin-top: 7px; margin-left: 3px; font-size: 11px;">Start</b></button>
           <span class="verticalLine_Taskbar"></span>
           <span class="afterVerticalLine_Taskbar"></span>
+          <button class="appIcon"><b>About Me!</b></button>
         </div> -->
     </body>
 </html>

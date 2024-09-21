@@ -29,6 +29,8 @@ function getFullDayString(dayNumber) {
 
 document.onreadystatechange = () => {
     if (document.readyState === 'complete') {
+        addNewWindow(document.getElementById("TOOG-projectInfo"));
+        addNewWindow(document.getElementById("AAP-projectInfo"));
 
         const text = `
         Hello, world!<br><pause=300>
@@ -37,7 +39,7 @@ document.onreadystatechange = () => {
         I'm a beginner r6 animator,<br>
         as well as a<pause=300> UI des<pause=150>igner...<br>
         <pause=800>I have worked on some projects so feel free to check them out!<br>
-        I'm avalible on weekdays from 5pm to 8pm and on weekends i'm available from 1pm to around 10pm (keep in mind this schedule is flexible)<br>
+        I'm avalaible on weekdays from 5pm to 8pm and on weekends i'm available from 1pm to around 10pm (keep in mind this schedule is flexible)<br>
         <pause=800>(MST is m<pause=250>y timezone by the way)<br>
         <br>
         Thanks and have a good day!<br>
