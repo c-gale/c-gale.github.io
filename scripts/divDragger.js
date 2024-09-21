@@ -29,8 +29,10 @@ function dragElement(elmnt) {
       elmnt.style.zIndex = highestZindex + 1;
       highestZindex += 1
 
-      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      if ((elmnt.offsetTop - pos2) > 0 && (elmnt.offsetTop - pos2) < window.innerHeight && (elmnt.offsetLeft - pos1) > 0 && (elmnt.offsetLeft - pos1) < window.innerWidth) {
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
     }
   
     function closeDragElement() {
