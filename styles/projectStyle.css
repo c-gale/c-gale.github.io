@@ -78,6 +78,15 @@ body {
     margin-left: 21px;
 }
 
+.link {
+    color: rgb(0, 0, 158);
+    text-decoration: underline;
+}
+
+.imageSizeWindow {
+    width: 200px; height: 200px;
+}
+
 .project-container {
     background-color: #c0c0c0;
     border-top: 2px #adadad solid;
