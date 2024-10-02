@@ -18,7 +18,7 @@ document.onreadystatechange = () => {
         const text = `
             Hello, world!<br><pause=300>
             I'm Optical, And I like making games!<br>
-            I have 3 years of scripting experience,<br>
+            I have 4 years of scripting experience with luau,<br>
             I'm a beginner r6 animator,<br>
             as well as a<pause=300> UI des<pause=150>igner...<br>
             <pause=800>I have worked on some projects so feel free to check them out!<br>
