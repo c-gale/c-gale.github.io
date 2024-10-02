@@ -36,7 +36,6 @@ function openWindow(element, startX, targetY, targetWidth) {
 
     windowDivs[element.id]["isOpen"] = true;
 
-    const headerOfElement = document.getElementById(element.id + "-Header")
     const bodyOfElement = document.getElementById(element.id + "-Body")
 
     element.style.display = "block";
@@ -51,11 +50,10 @@ function openWindow(element, startX, targetY, targetWidth) {
     var targetYInterval = (parseInt(element.style.top,10) - targetY)/iterations
     var targetWidthInterval = (targetWidth - parseInt(element.style.width,10))/iterations
 
-    // var totalStepsToReachDesiredWidth = 0;
     let iteration = 0;
     const interval = setInterval(() => {
         if (iteration < iterations) {
-            const randomNum = (Math.random() * (100 - 1) + 1) // whether or not to hide the div for this interation
+            const randomNum = (Math.random() * (100 - 1) + 1) // whether or not to hide the div for this iteration
 
             if (randomNum >= 63) {
                 element.style.display = "none";

@@ -40,7 +40,6 @@
 </head>
     <body>
         <div class="projects" style="display: flex; margin-left: auto; margin-right: auto;">
-            <!-- <img src="/imgs/matrixGif.gif" alt="matrixGif" stlye="position: absolute; z-index: -2;"> -->
             <div class="window" style="margin-bottom: 32px; margin-top:20px; min-width: 730px; max-width: max-content; height: 600px;">
                 <div class="title-bar">
                   <div class="title-bar-text">
@@ -89,7 +88,7 @@
                       <!-- <img class="sideGif" alt="maxwell" src="/imgs/maxwell.gif">  a bit too much movement for contrast-->
                     </div>
                     <hr>
-                    &copy ABOUT ME 2024. COPYRIGHT LOLOLOL.
+                    &copy ABOUT ME 2024. COPYRIGHT LOLOLOL. (note: used 98.css for the windows 98 themed CSS!)
                 </div>
             </div>
 
@@ -126,7 +125,7 @@
                           <br>
                           <div class="details-subtitle-x2">Combat System</div>
                           <br>
-                          <button class="projectExpand" onclick='openWindow(document.getElementById("CS-projectInfo"), 100, 55, 900)'>MORE ABOUT THIS PROJECT</button>
+                          <button class="projectExpand" onclick='openWindow(document.getElementById("CS-projectInfo"), 200, 90, 900)'>MORE ABOUT THIS PROJECT</button>
                         </div>
                       </div>
                       
@@ -261,9 +260,10 @@
                     </div>
                     <hr>
                     <div class="imageDiv" style="margin-left: 8px;">
-                      <div id="combatGif"></div>
+                      <div id="combatGif"></div> 
+                      <!-- ^^ will be loaded with JS to make the loading faster -->
                       <p>(a small fight me and my friend did)</p>
-                      <div id="dodgingGif"></div>
+                      <div id="dodgingGif"></div> 
                       <p>(an example of the dodging system)</p>
                       <br>
                     </div>
@@ -273,12 +273,28 @@
                 </div>
                 </div>
 
+                <div class="window" id="loading-window">
+                  <div class="title-bar">
+                    <div class="title-bar-text">
+                      LOADING
+                    </div>
+                    <div class="title-bar-controls">
+                      <button aria-label="Minimize"></button>
+                      <button aria-label="Close"></button>
+                    </div>
+                  </div>
+                  <div class="window-body" id="loading-window-body">
+                    <img alt="_" src="/imgs/gifs/loading.gif" width="50px">
+                    <p style="padding: 1ch; font-size: 14px; margin-left: 5px;">LOADING WEBSITE...</p>
+                  </div>
+                </div>
+
         <div id="cursor"></div>
         <!-- <div class="taskbar">
           <button id="startBtn"> <img alt="startIco" src="/imgs/favicon.ico" style="width: 15px; height: 15px; margin-top: 5px; margin-left: 7px;"> <b style="margin-top: 7px; margin-left: 3px; font-size: 11px;">Start</b></button>
           <span class="verticalLine_Taskbar"></span>
           <span class="afterVerticalLine_Taskbar"></span>
           <button class="appIcon"><b>About Me!</b></button>
-        </div> -->
+        </div> maybe add this later! -->
     </body>
 </html>

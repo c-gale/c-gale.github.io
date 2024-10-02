@@ -3,7 +3,7 @@
 }
 
 body { 
-    background-image:url('/imgs/matrixGif.gif'); background-repeat:repeat; 
+    background-image:url('/imgs/gifs/matrixGif.gif'); background-repeat:repeat; 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -13,43 +13,6 @@ body {
     margin-left: auto;
     width: auto;
     height: 35px;
-}
-
-#pfpImage {
-    border: 5px solid #000000;
-    margin-right: 3ch;
-    border-radius: 1px;
-    padding: 5px;
-    height: 135px;
-    width: auto;
-}
-
-#cursor {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background: url('../cursor/arrow.cur') no-repeat center center;
-    background-size: contain;
-    pointer-events: none;
-    transition: top 1s ease, left 1s ease; /* Ensure transition is applied */
-    left: -9999px;
-    top: -9999px;
-}
-
-#aboutMeDesc {
-    min-height: 128px;
-    height: fit-content;
-    width: 400px;
-}
-
-#socials {
-    margin-left: auto;
-    width: auto;
-}
-
-#titleImage {
-    width: 154px;
-    height: auto;
 }
 
 .horizontal-container {
@@ -138,22 +101,6 @@ body {
     border-bottom: 2px #09090a solid;
 }
 
-#startBtn {
-    align-content: center;
-    align-self: center;
-    color: #000000;
-    background-color: #c0c7c8;
-    border-top: 1px #f1f3f3 solid;
-    border-left: 1px #f1f3f3 solid;
-    border-right: 1px #09090a solid;
-    border-bottom: 1px #09090a solid;
-    max-width: 3px;
-    padding: 0px;
-    height: 26px;
-    font-size: 10px;
-    display: flex;
-}
-
 .verticalLine_Taskbar {
     align-self: center;
     margin-left: 2px;
@@ -182,3 +129,83 @@ body {
     align-self: center;
 }
 
+#loading-window {
+    position: absolute;
+    left: 45%;
+    align-self: center;
+}
+
+#loading-window-inner {
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loading-window-body {
+    display: flex;
+}
+
+#pfpImage {
+    border: 5px solid #000000;
+    margin-right: 3ch;
+    border-radius: 1px;
+    padding: 5px;
+    height: 135px;
+    width: auto;
+}
+
+#cursor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('../cursor/arrow.cur') no-repeat center center;
+    background-size: contain;
+    pointer-events: none;
+    transition: top 1s ease, left 1s ease; /* Ensure transition is applied */
+    left: -9999px;
+    top: -9999px;
+}
+
+/* #startBtn {
+    align-content: center;
+    align-self: center;
+    color: #000000;
+    background-color: #c0c7c8;
+    border-top: 1px #f1f3f3 solid;
+    border-left: 1px #f1f3f3 solid;
+    border-right: 1px #09090a solid;
+    border-bottom: 1px #09090a solid;
+    max-width: 3px;
+    padding: 0px;
+    height: 26px;
+    font-size: 10px;
+    display: flex;
+} */
+
+#aboutMeDesc {
+    min-height: 128px;
+    height: fit-content;
+    width: 400px;
+}
+
+#CS-projectInfo {
+    display: none;
+}
+
+#AAP-projectInfo {
+    display: none;
+}
+
+#TOOG-projectInfo {
+    display: none;
+}
+
+#socials {
+    margin-left: auto;
+    width: auto;
+}
+
+#titleImage {
+    width: 154px;
+    height: auto;
+}

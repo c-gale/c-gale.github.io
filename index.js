@@ -35,6 +35,65 @@ function getFullDayString(dayNumber) {
     return day;
 };
 
+
+function doDeleteAllEffect() {
+    var element = document.getElementById("aboutMeDesc");
+    element.innerHTML = "";
+}
+
+function isInOptionTable(option) {
+    for (const [key, value] of Object.entries(optionValues)) {
+        console.log(key+" : "+value);
+        if (option == key) {
+            return [true, value];
+        }
+    }
+
+    return false;
+}
+
+function onSubmitOptionClicked() {
+    if (isCurrentlyTyping) {
+        console.log("CAN'T RN!");
+        return
+    }
+
+    const selectElement = document.querySelector('#whatDoYouSelect');
+    var selectedOption = selectElement.value;
+
+    const [ isOption, optionText ] = isInOptionTable(selectedOption)
+
+    if (isOption) {
+        const element = document.getElementById("#aboutMeDesc")
+        moveCursor('aboutMeDesc', document.getElementById('cursor'));
+
+        setTimeout(() => { 
+            var sound = new Howl({
+                src: ["/sfx/mouseclick.wav"],
+                volume: 0.4,
+                autoplay: false
+            });
+        
+            sound.play();
+        }, 2000)
+
+        setTimeout(() => {
+            doDeleteAllEffect();
+        }, 2500);
+
+        setTimeout(() => {
+            typewriter(document.getElementById("aboutMeDesc"), optionText).then(() => {
+                setTimeout(() => {
+                    cursor.style.left = "130%";
+                    cursor.style.top = "200px";
+
+                    isCurrentlyTyping = false;
+                }, 2500);
+            })
+        }, 2700);
+    };
+};
+
 document.onreadystatechange = () => {
     if (document.readyState === 'complete') {
         const text = `
@@ -47,7 +106,8 @@ document.onreadystatechange = () => {
         i write songs but i'm still relatively new to it<br><pause=1100>
         << PFP here<pause=600> (I didn't wanna make a seperate la<pause=250>bel for it)..<pause=200>.<pause=500><br>
         anyways cya for now!<br>
-        P.<pause=500>S.<pause=500> this website is very incomplete atm!`
+        P.<pause=500>S.<pause=500> this website is very incomplete atm so<br>
+        go check out my portfolio at https://c-gale.github.io/projects`
 
         const cursor = document.getElementById('cursor');
         
@@ -89,7 +149,8 @@ document.onreadystatechange = () => {
     }
 };
 
-// CSS for the blinking cursor
+// ON RUN
+
 const style = document.createElement('style');
 style.innerHTML = `
     .blinking-cursor {
