@@ -1,6 +1,7 @@
 function loadGifs() { // IMPROVE APON LATER...
     document.getElementById("combatGif").innerHTML = '<img alt="image" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3Q0OWZsMms0bjlnc3J5cDNvZWJ4eGd6bG11MnVibmxlM2lqd2doYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/i0tYY5nK336BKisPMH/giphy.gif" class="imageSizeWindow">'
     document.getElementById("dodgingGif").innerHTML = '<img alt="image" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExamdlM2wyc3kweXJ0YmhkeDN1djk5bTFjYm5zd3Vwd2l5OW0xczRtMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IONNUPOYnDxU5vPYN6/giphy.gif" class="imageSizeWindow">'
+    document.getElementById("topdownExampleGif").innerHTML = '<img alt="image" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3hnYzBkdzR6dHBnZ2EyYmRraGpmcXRrcDQzeWs5bXZqaWdhY2ZlZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iwHGv8UnfijFIqmsdH/giphy.gif" class="imageSizeWindow">'
 }
 
 document.onreadystatechange = () => {
@@ -10,6 +11,7 @@ document.onreadystatechange = () => {
         addNewWindow(document.getElementById("TOOG-projectInfo"));
         addNewWindow(document.getElementById("AAP-projectInfo"));
         addNewWindow(document.getElementById("CS-projectInfo"));
+        addNewWindow(document.getElementById("US-projectInfo"));
 
         loadGifs()
 
