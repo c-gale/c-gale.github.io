@@ -16,14 +16,10 @@ function playKeyboardSound() {
     const randomnum = (Math.random() * (keyboardSFXFileNames.length-1))
     const randomKeyboardSFX = keyboardSFXFileNames[Math.round(randomnum)]
 
-    var sound = new Howl({
-        src: ["/sfx/"+randomKeyboardSFX+".mp3"],
-        volume: 0.2,
-        autoplay: false
-    });
+    var audio = new Audio("/sfx/"+randomKeyboardSFX+".mp3");
+    audio.volume = 0.7;
 
-    sound.play();
-    sound = null;
+    audio.play();
 }
 
 function preprocessText(text) {

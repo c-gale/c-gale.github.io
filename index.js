@@ -68,13 +68,10 @@ function onSubmitOptionClicked() {
         moveCursor('aboutMeDesc', document.getElementById('cursor'));
 
         setTimeout(() => { 
-            var sound = new Howl({
-                src: ["/sfx/mouseclick.wav"],
-                volume: 0.4,
-                autoplay: false
-            });
-        
-            sound.play();
+            var clickSFX = new Audio("/sfx/mouseclick.wav");
+            clickSFX.volume = 0.7;
+
+            clickSFX.play();
         }, 2000)
 
         setTimeout(() => {
@@ -126,13 +123,10 @@ document.onreadystatechange = () => {
         }, 1000);
 
         setTimeout(() => { 
-            var sound = new Howl({
-                src: ["/sfx/mouseclick.wav"],
-                volume: 0.4,
-                autoplay: false
-            });
-        
-            sound.play();
+            var clickSFX = new Audio("/sfx/mouseclick.wav");
+            clickSFX.volume = 0.7;
+
+            clickSFX.play();
          }, 2000)
 
         setTimeout(() => {
