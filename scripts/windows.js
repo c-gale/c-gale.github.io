@@ -69,13 +69,10 @@ function openWindow(element, startX, targetY, targetWidth) {
         } else {
             element.style.display = "block";
 
-            const sound = new Howl({
-                src: ["/sfx/ding.mp3"],
-                volume: 0.8,
-                autoplay: false
-            });
-        
-            sound.play();
+            var dingSFX = new Audio("/sfx/ding.mp3");
+            dingSFX.volume = 0.7;
+
+            dingSFX.play();
 
             bodyOfElement.style.display = "block";
             clearInterval(interval);
