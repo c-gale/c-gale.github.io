@@ -7,7 +7,7 @@ function loadGifs() { // IMPROVE APON LATER...
 document.onreadystatechange = () => {
     if (document.readyState === 'complete') {
         document.getElementById("loading-window").remove()
-        
+
         addNewWindow(document.getElementById("AAP-projectInfo"));
         addNewWindow(document.getElementById("CS-projectInfo"));
         addNewWindow(document.getElementById("US-projectInfo"));
@@ -17,12 +17,11 @@ document.onreadystatechange = () => {
         const text = `
             Hello, world!<br><pause=300>
             I'm Optical, And I like making games!<br>
-            I have 4 years of scripting experience with luau,<br>
+            I have most of my experience in luau scripting,<br>
             I'm a beginner r6 animator,<br>
             as well as a<pause=300> UI des<pause=150>igner...<br>
             <pause=800>I have worked on some projects so feel free to check them out!<br>
-            I'm available on weekdays from 5 pm to 8 pm and on weekends i'm available from 1pm to around 10 pm (keep in mind this schedule is flexible)<br>
-            <pause=800>(MST is m<pause=250>y timezone by the way)<br>
+            I'm avalible most of the time so feel free to reach out if you want...<br>
             <br>
             Thanks and have a good day!<br>
             Also, you can reach me through discord at @optical_.
