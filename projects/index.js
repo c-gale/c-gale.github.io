@@ -7,8 +7,7 @@ function loadGifs() { // IMPROVE APON LATER...
 document.onreadystatechange = () => {
     if (document.readyState === 'complete') {
         document.getElementById("loading-window").remove()
-
-        addNewWindow(document.getElementById("TOOG-projectInfo"));
+        
         addNewWindow(document.getElementById("AAP-projectInfo"));
         addNewWindow(document.getElementById("CS-projectInfo"));
         addNewWindow(document.getElementById("US-projectInfo"));
