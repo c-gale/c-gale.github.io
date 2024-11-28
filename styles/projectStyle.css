@@ -87,6 +87,10 @@ body {
     font-size: 22px;
 }
 
+#profile {
+    margin-bottom: 32px; margin-top:20px; min-width: 730px; max-width: max-content; height: 600px;
+}
+
 .taskbar {
     display: flex;
     margin-top: auto;
@@ -161,9 +165,95 @@ body {
     background: url('../cursor/arrow.cur') no-repeat center center;
     background-size: contain;
     pointer-events: none;
-    transition: top 1s ease, left 1s ease; /* Ensure transition is applied */
+    transition: top 1s ease, left 1s ease;
     left: -9999px;
     top: -9999px;
+}
+
+#projects {
+    display: flex; margin-left: auto; margin-right: auto;
+}
+
+#socials-mobile {
+    display: none;
+}
+
+#experiences {
+    margin-bottom: 32px; margin-left: 10px; margin-top:20px; min-width: fit-content; max-height: 600px;
+}
+
+@media screen and (max-width: 460px) {
+    #profile {
+        margin-top: 5px; min-width: 300px; max-width: 500px; height: 650px;
+    }
+
+    .aboutMeDetails {
+        font-size: 15px;
+    }
+
+    #socials-mobile {
+        display: block;
+        margin-left: 5px;
+    }
+
+    #socials {
+        display: none;
+    }
+
+    #experiences {
+        margin-bottom: 32px; margin-top:20px; min-width: fit-content; max-height: 600px;
+    }
+
+    .imageDiv {
+        max-width: 500px;
+    }
+
+    .details-subtitle-x2 {
+        font-size: 50px;
+    }
+
+    .projectExpand {
+        min-width: 400px;
+        min-height: 35px;
+        font-size: 20px;
+    }
+
+    .scroll-container {
+        min-height: auto;
+    }
+
+    .projectImage {
+        min-width: 430px;
+        min-height: 430px;
+    }
+
+
+
+    #AAP-projectInfo {
+        max-width: 540px;
+    }
+
+    #CS-projectInfo {
+        max-width: 540px;
+    }
+
+    #US-projectInfo {
+        max-width: 540px;
+    }
+
+
+    #aboutMeDesc {
+        font-size: 13px;
+        max-width: 300px;
+    }
+
+    body {
+        min-width: 550px;
+    }
+
+    #projects {
+        display: inline; margin-left: auto; margin-right: auto;
+    }
 }
 
 /* #startBtn {
@@ -187,6 +277,8 @@ body {
     height: fit-content;
     width: 400px;
 }
+
+
 
 #CS-projectInfo {
     display: none;

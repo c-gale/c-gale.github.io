@@ -9,8 +9,8 @@
   <link href="/styles/projectStyle.css" rel="stylesheet" type="text/css" />
   <!-- ^for the windows 98 look -->
 
-    <noscript>
-      <div class="window" style="margin-bottom: 9000px; margin-left: auto; margin-right: auto; margin-top:20px;">
+  <noscript>
+    <div class="window" style="margin-bottom: 9000px; margin-left: auto; margin-right: auto; margin-top:20px;">
         <div class="title-bar">
           <div class="title-bar-text">
             <img> FATAL ERROR:
@@ -38,8 +38,8 @@
   </style>
 </head>
     <body>
-        <div class="projects" style="display: flex; margin-left: auto; margin-right: auto;">
-            <div class="window" style="margin-bottom: 32px; margin-top:20px; min-width: 730px; max-width: max-content; height: 600px;">
+        <div class="projects" id="projects">
+            <div class="window" id="profile">
                 <div class="title-bar">
                   <div class="title-bar-text">
                     ABOUT ME:
@@ -47,7 +47,21 @@
                 </div>
                 <div class="window-body">
                     <div class="horizontal-container">
-                      <div class="pfpWrapper"><div class="title"> <div class="OPTICAL"><img id="titleImage" alt="OPTICAL", src="/imgs/titles/BIGTITLECROPPED.png" width=400px height=45px style="overflow: hidden;"></div></div><img alt="pfp" src="/imgs/pfp.png" id="pfpImage"></div>
+                      <div class="pfpWrapper">
+                        <div class="title"> 
+                        <div class="OPTICAL">
+                        <img id="titleImage" alt="OPTICAL", src="/imgs/titles/BIGTITLECROPPED.png" width=400px height=45px style="overflow: hidden;">
+                        
+                      </div>
+                      
+                      </div>
+                      <img alt="pfp" src="/imgs/pfp.png" id="pfpImage"> 
+                      <div id="socials-mobile">
+                        <button class="socialBTN" style="min-width: 145px;" onclick="window.open('https://www.roblox.com/users/38068071/profile','_blank')">ROBLOX</button><br>
+                        <button class="socialBTN" style="min-width: 145px;" onclick="window.open('https://github.com/c-gale','_blank')">GITHUB</button>
+                      </div>
+                    </div>
+
                       <div class="aboutMeDescBox" style="min-width: max-content;">
                         
                           <b>ABOUT ME:</b>
@@ -91,21 +105,21 @@
                 </div>
             </div>
 
-            <div class="window" style="margin-bottom: 32px; margin-left: 10px; margin-top:20px; min-width: fit-content; max-height: 600px;">
+            <div class="window" id="experiences">
                 <div class="title-bar">
                   <div class="title-bar-text">
                     PROJECTS/EXPERIENCES:
                   </div>
                 </div>
                 <div class="window-body">
-                  <ul class="tree-view" style="width: auto;">
-                    <div class="scroll-container" data-mcs-mouseWheel="false" style="height: 520px; overflow: scroll;">
+                  <ul class="tree-view" style="width: auto; height: auto;">
+                    <div class="scroll-container" data-mcs-mouseWheel="false" style="height: 560px; overflow: scroll;">
                       <div class="project-container">
                         <div class="imageDiv"><img alt="image" src="/imgs/gameIcons/atlasadminpanellogo.png" class="projectImage">
                           <br>
                           <div class="details-subtitle-x2">Atlas Admin Panel</div>
                           <br>
-                          <button class="projectExpand" onclick='openWindow(document.getElementById("AAP-projectInfo"), 300, 100, 900)'>MORE ABOUT THIS PROJECT</button>
+                          <button class="projectExpand" onclick='var width = window.innerWidth; var openX = 300; var openY = 100; if (width <= 460) {openX = 0; openY = 50;} openWindow(document.getElementById("AAP-projectInfo"), openX, openY, 900)'>MORE ABOUT THIS PROJECT</button>
                         </div>
                       </div>
 
@@ -114,7 +128,7 @@
                           <br>
                           <div class="details-subtitle-x2">Combat System</div>
                           <br>
-                          <button class="projectExpand" onclick='openWindow(document.getElementById("CS-projectInfo"), 200, 90, 900)'>MORE ABOUT THIS PROJECT</button>
+                          <button class="projectExpand" onclick='var width = window.innerWidth; var openX = 200; var openY = 90; if (width <= 460) {openX = 0; openY = 50;} openWindow(document.getElementById("CS-projectInfo"), openX, openY, 900)'>MORE ABOUT THIS PROJECT</button>
                         </div>
                       </div>
 
@@ -123,7 +137,7 @@
                           <br>
                           <div class="details-subtitle-x2">Unnamed Top-Down<br>Shooter</div>
                           <br>
-                          <button class="projectExpand" onclick='openWindow(document.getElementById("US-projectInfo"), 200, 90, 900)'>MORE ABOUT THIS PROJECT</button>
+                          <button class="projectExpand" onclick='var width = window.innerWidth; var openX = 200; var openY = 90; if (width <= 460) {openX = 0; openY = 50;} openWindow(document.getElementById("US-projectInfo"), openX, openY, 900)'>MORE ABOUT THIS PROJECT</button>
                         </div>
                       </div>
 
