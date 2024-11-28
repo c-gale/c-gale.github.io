@@ -26,13 +26,9 @@ function closeWindow(elementId) {
 }
 
 function openWindow(element, startX, targetY, targetWidth) {
-    if (!windowDivs[element.id]) {
-        return false;
-    }
+    const width = window.innerWidth;
 
-    var width = window.innerWidth;
-
-    if (width <= 460) {
+    if (width <= 560) {
         for (const elementId in windowDivs) {
             const element = windowDivs[elementId]
             if (element["isOpen"]) {
@@ -41,6 +37,10 @@ function openWindow(element, startX, targetY, targetWidth) {
         }
     }
 
+    if (!windowDivs[element.id]) {
+        return false;
+    }
+    
     if (windowDivs[element.id]["isOpen"] == true) {
         return false;
     }
@@ -59,6 +59,8 @@ function openWindow(element, startX, targetY, targetWidth) {
     var iterations = 8;
 
     var targetYInterval = (parseInt(element.style.top,10) - targetY)/iterations
+    var targetXInterval = (parseInt(element.style.left,10) - 0)/iterations
+
     var targetWidthInterval = (targetWidth - parseInt(element.style.width,10))/iterations
 
     let iteration = 0;
@@ -72,6 +74,9 @@ function openWindow(element, startX, targetY, targetWidth) {
                 element.style.display = "block";
             }
 
+            if (width <= 560) {
+                element.style.left = `${parseInt(element.style.left,10) - targetXInterval}px`
+            }
             element.style.top = `${parseInt(element.style.top,10) - targetYInterval}px`
             element.style.width = `${parseInt(element.style.width,10) + targetWidthInterval}px`
 
