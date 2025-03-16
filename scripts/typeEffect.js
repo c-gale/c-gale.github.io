@@ -17,7 +17,7 @@ function playKeyboardSound() {
     const randomKeyboardSFX = keyboardSFXFileNames[Math.round(randomnum)]
 
     var audio = new Audio("/sfx/"+randomKeyboardSFX+".mp3");
-    audio.volume = 0.7;
+    audio.volume = 0.4;
 
     audio.play();
 }
